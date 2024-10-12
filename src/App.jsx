@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      <Logo />
       <h1>Vite + React</h1>
+      <Logo />
       <div className='jbclsndpvsnpv'/>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
