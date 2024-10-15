@@ -19,8 +19,11 @@ const RegisterForm = () => {
 
   return (
     <div className="p-8 w-full">
-      <div className="text-4xl font-bold mb-6">Register</div>
-      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+      <div className="text-6xl font-serif mb-10">SWEET SOUL</div>
+      <form
+        className="flex flex-col gap-5 font-serif mb-16"
+        onSubmit={handleSubmit}
+      >
         <Input
           label="Username"
           inputType="text"
@@ -39,11 +42,18 @@ const RegisterForm = () => {
           value={password}
           onChange={setPassword}
         />
-        <button className="w-full rounded-full px-4 py-2 bg-primary-2 text-white text-xl font-medium">
-          Register
+        <button className="w-full rounded-full px-8 font-serif py-2 bg-primary-2 text-white text-xl font-medium mb-0 outline-slate-950 outline-1 outline-none">
+          Sign up
         </button>
       </form>
-      <Link to="/auth/login">Already have an account! Login</Link>
+      <div className="text-xl font-serif">
+        <div className="flex flex-row gap-16">
+          Already have an account?       
+          <Link to="/auth/login" className="rounded-full px-6  bg-slate-400 bg-opacity-40 outline-slate-700 outline-none ">
+            Login
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
