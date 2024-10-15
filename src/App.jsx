@@ -1,29 +1,47 @@
-import { useState } from 'react'
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 
-import Logo from './Logo'
-import './App.css'
+import HomePage from "./pages/Homepage.jsx";
+import MenuPage from "./pages/MenuPage.jsx";
+import RestaurantPage from "./pages/RestaurantPage.jsx";
+import LoginForm from "./components/LoginForm.jsx";
+import AuthPage from "./pages/AuthPage.jsx";
+import RegisterForm from "./components/RegisterForm.jsx";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage/>,
+  },
+  {
+    path: "/auth",
+    children:  [
+      { path: "", element: <Navigate to="login" replace /> },
+      { path: "login", element: <AuthPage><LoginForm /></AuthPage> },
+      { path: "register", element: <AuthPage><RegisterForm /></AuthPage> }
+    ]
+  },
+  
+  {
+    path: "/menu",
+    element: <MenuPage/>,
+  },
+  {
+    path: "/restaurant",
+    element: <RestaurantPage/>,
+  },
+
+]);
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <Logo />
-      <div className='jbclsndpvsnpv'/>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <RouterProvider router={router} />
+  );
 }
 
 export default App

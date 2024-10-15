@@ -1,0 +1,23 @@
+h1 {
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 400px;
+    padding: 10px;
+}
+li{
+    list-style: none;
+}
+.Option {
+    display: flex;
+    justify-content: space-between;
+    flex: 3;
+    display: flex;
+}
+.Option>li{
+    padding: 0 72px;
+    position: relative;
+    top: 120px;
+
+}
