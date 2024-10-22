@@ -10,12 +10,17 @@ import RestaurantPage from "./pages/RestaurantPage.jsx";
 import LoginForm from "./components/LoginForm.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 import RegisterForm from "./components/RegisterForm.jsx";
-import ForgotPassword from "./components/ForgotPassword.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
+import TaskBar from "./components/TaskBar.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    children: [
+      {path: "", element: <HomePage>
+        <TaskBar />
+      </HomePage>}
+    ],
   },
   {
     path: "/auth",
@@ -37,18 +42,13 @@ const router = createBrowserRouter([
           </AuthPage>
         ),
       },
-      {
-        path: "forgotpassword",
-        element: (
-          <AuthPage>
-            <LoginForm>
-              <ForgotPassword />
-            </LoginForm>
-          </AuthPage>
-        ),
-      },
     ],
   },
+  {
+    path: "/forgotpassword",
+    element: <ForgotPassword />
+  },
+
 
   {
     path: "/menu",

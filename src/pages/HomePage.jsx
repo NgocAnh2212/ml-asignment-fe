@@ -1,8 +1,11 @@
 import React from 'react'
 
-const HomePage = () => {
+
+const HomePage = ({children}) => {
   return (
-    <div>HomePage</div>
+    <div className="flex w-full h-screen relative" >
+      <div className=' flex absolute'>{children}</div>
+    </div>
   )
 }
 
