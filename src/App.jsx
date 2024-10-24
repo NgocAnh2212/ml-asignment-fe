@@ -16,11 +16,8 @@ import TaskBar from "./components/TaskBar.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    children: [
-      {path: "", element: <HomePage>
-        <TaskBar />
-      </HomePage>}
-    ],
+    element: <HomePage />
+    
   },
   {
     path: "/auth",
